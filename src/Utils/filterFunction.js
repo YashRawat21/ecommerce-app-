@@ -4,5 +4,6 @@ export const filtersHandler = (filters, products) => {
     newData = searchValue.trim().length > 0 ? newData.filter(({title}) => title.toLowerCase().includes(searchValue.trim().toLowerCase())) : newData;
     newData = priceRange ? newData.filter(({price}) => price <= parseInt(priceRange)) : newData;
     newData = sortBy ? newData.sort((a,b) => sortBy === 'highToLow' ? b.price - a.price : a.price - b.price) : newData;
+    newData = checkboxes.length > 0 ? newData.filter(({title}) => checkboxes.some(cat => cat === title)) : newData;
     return newData;
 }
