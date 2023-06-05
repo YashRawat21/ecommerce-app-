@@ -1,0 +1,55 @@
+.categoryProducts {
+    display: flex;
+    padding: 30px 50px;
+
+}
+.categoryLeft{
+    flex:1;
+    position: sticky;
+    height: 100%;
+    top: 50px;
+    
+}
+
+.searchItem{
+    width: 100%;
+     display: flex;
+     flex-direction: row-reverse;
+     justify-content: flex-end;
+     align-items: center;
+
+}
+
+.searchItem input{
+    outline:none;
+    
+}
+
+
+.categoryImg{
+    width: 100%;
+    height: 300px;
+    object-fit: cover ;
+    margin-bottom: 50px;
+}
+.categoryRight{
+    flex: 3;
+   
+}
+
+
+
+.categoryFilterItem{
+    margin-bottom: 30px;
+}
+.categoryH2{
+    font-weight: bold;
+    margin-bottom: 20px;
+   
+}
+.categoryInputItem{
+    margin-bottom: 10px;
+}
+.categoryLabel{
+    margin-left: 5px;
+}
