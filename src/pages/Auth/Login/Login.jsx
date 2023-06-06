@@ -12,7 +12,7 @@ const Login = () => {
 	const [userDetails, setUserDetails] = useState({
 		email: '',
 		password: ''
-	}) 
+	})
 
 	const guestUserDetails = {
 		email: "adarshbalika@gmail.com",
@@ -34,9 +34,8 @@ const Login = () => {
 		  position:"bottom-right",
 		  theme:"dark"
 		});
-	   }
+	}
 	return (
-
 		<div className="loginMain">
 
 			<div className="form-container" >

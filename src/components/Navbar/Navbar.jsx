@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom';
 import "./Navbar.css"
 import { useContext } from 'react';
 import { SupplyContext } from '../Context/Context';
+import { useAuth } from '../Context/auth-context';
 
 export default function Navbar(){
   const {cart,wishList,currencyHandler} = useContext(SupplyContext)
+  const { token } = useAuth();
     return(
         <div className="navbar">
             <div className="wrapper">
@@ -50,7 +52,7 @@ export default function Navbar(){
             <Link className='link' to ="/"> Stores</Link>
         </div>
         <div className="icons">
-         <Link to = "/login"> <PersonOutlineOutlinedIcon /> </Link>
+         <Link to = {`${token ? "/profile" : "/login"}`}> <PersonOutlineOutlinedIcon /> </Link>
          <Link to ="/wishList"> <FavoriteOutlinedIcon /> </Link>
          <span className='wishListItems'>{wishList.length}</span>
         </div>
@@ -60,7 +62,7 @@ export default function Navbar(){
         
          <span className='cartItems'>{cart.length}</span>
         </div>
-        </div>
+        </div>o
         </div>
         
         </div>

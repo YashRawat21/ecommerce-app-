@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { loginServices, signupServices } from "../../services/services";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -8,7 +9,7 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorageToken?.token);
   const localStorageUser = JSON.parse(localStorage.getItem("login"));
   const [user, setUser] = useState(localStorageUser?.user);
-
+  const navigate = useNavigate();
   const loginUser = async (email, password) => {
     try {
       const {
@@ -36,6 +37,7 @@ const AuthProvider = ({ children }) => {
     // toastNotification("error", "Logged Out");
     setToken(null);
     setUser(null);
+    navigate('/');
   };
 
   const signupUser = async (firstName, lastName, email, password) => {

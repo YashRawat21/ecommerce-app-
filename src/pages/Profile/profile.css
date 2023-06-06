@@ -1,0 +1,28 @@
+.profile__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profile {
+    border: 1px solid black;
+    padding: 10px;
+}
+.address__form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+}
+.address {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.address__card {
+    width: auto;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+}

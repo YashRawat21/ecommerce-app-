@@ -2,6 +2,7 @@ import React from 'react'
 import "./Checkout.css"
 import { useContext } from 'react'
 import { SupplyContext } from '../../components/Context/Context'
+
 const Checkout = () => {
 const {addToCart,cart,selectedCurrency} = useContext(SupplyContext)
  const subTotal = cart.reduce((acc,curr) => acc + (curr.qty * curr.price),0);
@@ -10,6 +11,7 @@ const {addToCart,cart,selectedCurrency} = useContext(SupplyContext)
  const currency = selectedCurrency == "IND" ? "INR" :"USD";
 const payment =  selectedCurrency == "USD" ?( grandTotal * 82 ) : grandTotal*82;
 
+const { address } = useContext(SupplyContext);
 function loadScript(src) {
     return new Promise((resolve) => {
         const script = document.createElement("script");
@@ -62,8 +64,21 @@ function loadScript(src) {
  
     return (
         <div className='checkoutContainer'>
-            <div className='addressContainer'>
-
+            <div>
+                {
+                    
+                    address.map(({name, mobile, pincode, state, city}) =>  (
+                        <div style={{ border: '1px solid black', padding: '10px'}}>
+                        <label>
+                            <p>Name: {name}</p>
+                            <p>Mobile: {mobile}</p>
+                            <p>Pincode: {state}</p>
+                            <p>City: {city}</p>
+                            <input type="radio" />
+                        </label>
+                        </div>
+                    ))
+                }
             </div>
       <div className='checkout'> 
        <h3>Your Order</h3>
