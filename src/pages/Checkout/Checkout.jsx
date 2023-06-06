@@ -2,6 +2,8 @@ import React from 'react'
 import "./Checkout.css"
 import { useContext } from 'react'
 import { SupplyContext } from '../../components/Context/Context'
+import { useNavigate } from 'react-router-dom'
+
 
 const Checkout = () => {
 const {addToCart,cart,selectedCurrency} = useContext(SupplyContext)
@@ -10,7 +12,7 @@ const {addToCart,cart,selectedCurrency} = useContext(SupplyContext)
  const grandTotal =  Total - (selectedCurrency == "IND" ? 100 : 2) + (selectedCurrency == "IND" ? 82 : 1);
  const currency = selectedCurrency == "IND" ? "INR" :"USD";
 const payment =  selectedCurrency == "USD" ?( grandTotal * 82 ) : grandTotal*82;
-
+const navigate = useNavigate();
 const { address } = useContext(SupplyContext);
 function loadScript(src) {
     return new Promise((resolve) => {
@@ -43,6 +45,7 @@ function loadScript(src) {
         name: "Yash Corp.",
         description: "Transaction",
         handler: async function (response) {
+            navigate("/order")
         },
         prefill: {
             name: "abc ",
@@ -60,6 +63,7 @@ function loadScript(src) {
 
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
+    
 }    
  
     return (

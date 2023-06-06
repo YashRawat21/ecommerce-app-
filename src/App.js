@@ -17,6 +17,7 @@ import Mockman from 'mockman-js';
 import { PrivateRoutes } from "./routes/PrivateRoutes";
 import Checkout from "./pages/Checkout/Checkout";
 import Profile from "./pages/Profile/Profile";
+import { Order } from "./pages/Order/Order";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -51,6 +52,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/checkout" element = {<Checkout/>} />
               <Route path="/profile" element = {<Profile />} />
+              <Route path = "/order" element = {<Order />} />
             </Routes>
 
             <Footer />

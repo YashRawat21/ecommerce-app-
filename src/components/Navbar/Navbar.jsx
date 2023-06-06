@@ -62,7 +62,7 @@ export default function Navbar(){
         
          <span className='cartItems'>{cart.length}</span>
         </div>
-        </div>o
+        </div>
         </div>
         
         </div>
