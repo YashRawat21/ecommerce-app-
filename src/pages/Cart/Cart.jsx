@@ -20,7 +20,7 @@ export default function Cart() {
     }
    }
    
-   const increaseHandler = (item,index) => {
+   const increaseHandler = (item) => {
     setCart(cart => cart.map(cartItem => cartItem.id === item.id ? {...cartItem, qty: cartItem.qty++} : {...cartItem}));
    }
     
